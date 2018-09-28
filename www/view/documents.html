@@ -1,0 +1,52 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Nombre..." spellcheck="false" ng-model="document.name">
+                </label>
+                <label class="col col-center item item-input input-border-bottom font24w">
+                    Categoría:
+                    <select class="transparent-input font24w input-no-border background-transparent" ng-model="document.messages_type_id" ng-options="option.name for option in messagesTypeList track by option.id">
+                    </select>
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="fileUpload item item-input input-border-bottom font24w">Cargar documento...
+                    <input id="uploadBtn" type="file" class="upload" />
+                    <input class="input-no-border font24w" id="uploadFile" disabled="disabled" ng-model="document.url"/>
+                </label>
+            </div>
+            <div class="row control-center80">
+                <button class="button button-small button-block ion-upload icon-right control-center80 button-blue icon-yellow button-small" ng-click="createRepository() ">
+                    <a class="font20w ">Almacenar</a>
+                </button>
+            </div>
+            <br>
+            <div class="row item control-center80 ">
+                <div class="col col-33 font18r textAlign-l ">Nombre</div>
+                <div class="col col-33 font18r textAlign-l ">Categoria</div>
+                <div class="col col-10 "></div>
+                <div class="col col-10 "></div>
+            </div>
+            <ion-scroll direction="y " style="height: 350px !important;" class="control-center80">
+                <div class="row item " ng-repeat="r in documentList" ng-click="gridUserClick($index)" ng-class="{'row-selected':$index == idUserCurrentIndex}">
+                    <div class="col col-33 col-center font14b textAlign-l ">{{r.name}}</div>
+                    <div class="col col-33 col-center font14b textAlign-l ">{{r.tipo}}</div>
+                    <div class="col col-10 col-center ">
+                        <button style="color: green !important; " class="button button-small button-icon icon ion-ios-search-strong " ng-click="openDoc($index) "></button>
+                    </div>
+                    <div class="col col-10 col-center ">
+                        <button style="color: red !important; " class="button button-small button-icon icon ion-backspace " ng-click="delete($index) "></button>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

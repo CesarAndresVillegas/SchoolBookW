@@ -1,0 +1,76 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content class="padding" style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Nombres..." spellcheck="false" ng-model="users.name">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Apellidos..." spellcheck="false" ng-model="users.last_name">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Documento..." spellcheck="false" ng-model="users.document">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="number" placeholder="No. Celular..." spellcheck="false" ng-model="users.phone">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Dirección..." spellcheck="false" ng-model="users.address">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Mail..." spellcheck="false" ng-model="users.mail">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="password" placeholder="Pass..." spellcheck="false" ng-model="users.pass">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="password" placeholder="Confirme pass..." spellcheck="false" ng-model="users.pass_confirm">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col col-center item item-input input-border-bottom font24w">
+                    Rol:
+                    <select style="margin-left: 30% !important;" class="transparent-input font24w input-no-border background-transparent" ng-model="users.roles_id">
+                        <option value="3">Docentes/Admin</option>
+                        <option value="2">Padres</option>
+                        <option value="5">Rutas</option>
+                    </select>
+                </label>
+                <label class="col col-center item item-input input-border-bottom" style="padding: 0px !important;">
+                    <ion-checkbox style="padding: 6px !important;" class="input-no-border" ng-model="users.active"><a style="margin-left: 10%" class="font24w">Activar usuario</a>
+                    </ion-checkbox>
+                </label>
+            </div>
+            <div class="row">
+                <button style="margin-right: 1% !important;" class="col button button-small button-block ion-ios-compose icon-right button-blue icon-yellow button-small control-center80" ng-click="createUsers()">
+                    <a class="font16w">ALMACENAR</a>
+                </button>
+                <button style="margin-left: 1% !important;" class="col button button-small button-block ion-loop icon-right button-blue icon-yellow button-small control-center80" ng-click="updateUsers()">
+                    <a class="font16w">MODIFICAR</a>
+                </button>
+            </div>
+            <div class="row item control-center80">
+                <div class="col col-67 font18r textAlign-l">Nombre completo</div>
+                <div class="col col-33 font18r textAlign-l">Documento</div>
+            </div>
+            <ion-scroll direction="y" style="height: 200px;" class="control-center80">
+                <div class="row item" ng-repeat="r in userList" ng-click="gridClick($index)" ng-class="{'row-selected':$index == idCurrentIndex}">
+                    <div class="col col-67 col-center font14b textAlign-l">{{r.name}} {{r.  last_name}}</div>
+                    <div class="col col-33 col-center font14b textAlign-l">{{r.document}}</div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

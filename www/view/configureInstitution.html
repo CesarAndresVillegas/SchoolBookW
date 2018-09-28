@@ -1,0 +1,56 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content class="padding" style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+        </div>
+        <div class="row control-center80">
+            <label class="col item item-input input-border-bottom">
+                <input class="placeholder-input24 font24w" type="text" placeholder="Nombre..." spellcheck="false" ng-model="institution.name">
+            </label>
+            <label class="col item item-input input-border-bottom">
+                <input class="placeholder-input24 font24w" type="text" placeholder="Nit..." spellcheck="false" ng-model="institution.nit">
+            </label>
+        </div>
+        <div class="row control-center80">
+            <label class="col item item-input input-border-bottom">
+                <input class="placeholder-input24 font24w" type="text" placeholder="Ciudad..." spellcheck="false" ng-model="institution.city">
+            </label>
+            <label class="col item item-input input-border-bottom">
+                <input class="placeholder-input24 font24w" type="number" placeholder="Tel. contacto..." spellcheck="false" ng-model="institution.contact_phone">
+            </label>
+        </div>
+        <div class="row control-center80">
+            <label class="col fileUpload item item-input input-border-bottom font24w">Cargar logo...
+                <input id="uploadBtn" type="file" class="upload" />
+                <input class="input-no-border font24w" id="uploadFile" disabled="disabled" ng-model="institution.logo"/>
+            </label>
+        </div>
+        <div class="row">
+            <button style="margin-right: 1% !important;" class="col button button-small button-block ion-ios-compose icon-right button-blue icon-yellow button-small control-center80" ng-click="createInstitutions()">
+                <a class="font16w">ALMACENAR</a>
+            </button>
+            <button style="margin-left: 1% !important;" class="col button button-small button-block ion-loop icon-right button-blue icon-yellow button-small control-center80" ng-click="updateInstitutions()">
+                <a class="font16w">MODIFICAR</a>
+            </button>
+        </div>
+        <div class="row item control-center80 ">
+            <div class="col col-33 font18r textAlign-l">Nombre</div>
+            <div class="col col-20 font18r textAlign-l">Nit</div>
+            <div class="col col-20 font18r textAlign-l">Ciudad</div>
+            <div class="col col-20 font18r textAlign-l">Tel.</div>
+        </div>
+        <ion-scroll direction="y " style="height: 250px !important;" class="control-center80">
+            <div class="row item" ng-repeat="r in institutionList" ng-click="gridClick($index)" ng-class="{'row-selected':$index == idCurrentIndex}">
+                <div class="col col-33 col-center font14b textAlign-l ">{{r.name}}</div>
+                <div class="col col-20 col-center font14b textAlign-l ">{{r.nit}}</div>
+                <div class="col col-20 col-center font14b textAlign-l ">{{r.city}}</div>
+                <div class="col col-20 col-center font14b textAlign-l ">{{r.contact_phone}}</div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

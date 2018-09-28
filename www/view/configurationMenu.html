@@ -1,0 +1,48 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="container">
+            <div class="cell-row">
+                <div ng-click="goInstitutionConfiguration()" style="background-color: #FF6347; border-bottom: solid white; border-right: solid white; border-left: solid white; border-top: solid white;">
+                    <div>
+                        <div><i class="ion-android-bus icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Institución</div>
+                    </div>
+                </div>
+                <div ng-click="goUsersConfiguration()" style="background-color: #4575D4; border-right: solid white; border-bottom: solid white; border-top: solid white;">
+                    <div>
+                        <div><i class="ion-person icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Usuarios</div>
+                    </div>
+                </div>
+                <div ng-click="goStudentsConfiguration()" style="background-color: #05296E; border-bottom: solid white; border-top: solid white; border-right: solid white;">
+                    <div>
+                        <div><i class="ion-edit icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Estudiantes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-row">
+                <div ng-click="goGroupsConfiguration()" style="background-color: #1D766F; border-right: solid white; border-bottom: solid white; border-left: solid white; border-bottom: solid white;">
+                    <div>
+                        <div><i class="ion-ios-people icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Grupos</div>
+                    </div>
+                </div>
+                <div ng-click="goRoutesConfiguration()" style="background-color: #FFA700; border-bottom: solid white; border-right: solid white; border-bottom: solid white">
+                    <div>
+                        <div><i class="ion-android-bus icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Rutas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

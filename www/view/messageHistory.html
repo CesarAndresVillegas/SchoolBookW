@@ -1,0 +1,24 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div class="row item control-center80">
+                <div class="col col-33 font18r textAlign-l">Categoria</div>
+                <div class="col col-33 font18r textAlign-l">Asunto</div>
+                <div class="col col-33 font18r textAlign-r">Fecha</div>
+            </div>
+            <ion-scroll direction="y" style="height: 500px;" class="control-center80">
+                <div class="row item" ng-click="selectMessage($index)" ng-repeat="r in historyList" ng-class="{'row-selected':$index == idUserCurrentIndex}">
+                    <div class="col col-33 col-center font14b textAlign-l">{{r.name}}</div>
+                    <div class="col col-33 col-center font14b textAlign-l">{{r.subjet}}</div>
+                    <div class="col col-33 col-center font14b textAlign-r">{{r.send_date}}</div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

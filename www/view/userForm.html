@@ -1,0 +1,82 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content class="padding" style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div class="row control-center90">
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Nombres:</span>
+                    <input class="font20w" type="text" spellcheck="false" ng-model="student.name">
+                </label>
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Apellidos:</span>
+                    <input class="font20w" type="text" spellcheck="false" ng-model="student.last_name">
+                </label>
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Grado:</span>
+                    <select class="font20w" ng-model="student.grade" ng-options="option.name for option in gradeList track by option.id">
+                    </select>
+                </label>
+            </div>
+            <div class="row control-center90">
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Nombres:</span>
+                    <input class="font20w" type="text" spellcheck="false" ng-model="student.name">
+                </label>
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Apellidos:</span>
+                    <input class="font20w" type="text" spellcheck="false" ng-model="student.last_name">
+                </label>
+                <label class="item item-input input-border-bottom">
+                    <span class="input-label font20w">Grado:</span>
+                    <select class="font20w" ng-model="student.grade" ng-options="option.name for option in gradeList track by option.id">
+                    </select>
+                </label>
+            </div>
+
+
+
+
+
+
+
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Nombres..." spellcheck="false" ng-model="student.name">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Apellidos..." spellcheck="false" ng-model="student.last_name">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Documento..." spellcheck="false" ng-model="student.document">
+                </label>
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Grado actual..." spellcheck="false" ng-model="student.current_grade">
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col item item-input input-border-bottom">
+                    <input class="placeholder-input24 font24w" type="text" placeholder="Dirección..." spellcheck="false" ng-model="student.address">
+                </label>
+                <label class="col col-center item item-input input-border-bottom" style="padding: 0px !important;">
+                    <ion-checkbox style="padding: 6px !important;" class="input-no-border" ng-model="student.active"><a style="margin-left: 10%" class="font24w">Activar estudiante</a>
+                    </ion-checkbox>
+                </label>
+            </div>
+            <div class="row">
+                <button style="margin-right: 1% !important;" class="col button button-small button-block ion-ios-compose icon-right button-blue icon-yellow button-small control-center80" ng-click="createStudent()">
+                    <a class="font16w">ALMACENAR</a>
+                </button>
+                <button style="margin-left: 1% !important;" class="col button button-small button-block ion-loop icon-right button-blue icon-yellow button-small control-center80" ng-click="updateStudent()">
+                    <a class="font16w">MODIFICAR</a>
+                </button>
+            </div>\
+        </div>
+    </ion-content>
+</ion-view>

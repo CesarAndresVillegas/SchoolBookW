@@ -1,0 +1,24 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content class="padding" style="background: url(img/background.png) center; background-size: cover;">
+        <div class="list">
+            <div style="text-align: center; margin-top: 10%">
+                <a class="font-title-white">SchooL</a><a class="font-title-red">BooK</a>
+            </div>
+            <div style="text-align: center; margin-top: 10%" class="item item-input input-border-bottom control-center60">
+                <input class="placeholder-input-login font24w" type="text" placeholder="Correo..." spellcheck="false" ng-model="user.user" id="correo">
+            </div>
+            <div style="text-align: center;" class="item item-input input-border-bottom control-center60">
+                <input class="placeholder-input-login font24w" type="password" placeholder="Contraseña..." spellcheck="false" ng-model="user.pass" id="passW">
+            </div>
+            <button style="margin-top: 8%;" class="button button-block ion-log-in icon-right control-center60 button-blue icon-yellow" ng-click="login()">
+                <a class="font24w">Iniciar Sesión</a>
+            </button>
+        </div>
+    </ion-content>
+    <div class="bar bar-footer input-border-top">
+        <button style="background-color: transparent !important;" class="button"><a class="font18w" ng-disabled="isProcessing">¿Olvidaste la contraseña?</a></button>
+    </div>
+</ion-view>

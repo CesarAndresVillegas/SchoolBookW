@@ -1,0 +1,57 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="container">
+            <div class="cell-row">
+                <div style="background-color: #E54947; border-right: solid white; border-bottom: solid white; border-left: solid white; border-top: solid white;" ng-click="configurationMenu()">
+                    <div>
+                        <div><i class="ion-gear-b icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Configuración</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-row">
+                <div style="background-color: #4575D4; border-right: solid white; border-bottom: solid white; border-left: solid white;" ng-click="documents()">
+                    <div>
+                        <div><i class="ion-social-buffer icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Documentos</div>
+                    </div>
+                </div>
+                <div style="background-color: #05296E; border-bottom: solid white; border-right: solid white;" ng-click="newMessage()">
+                    <div>
+                        <div><i class="ion-document icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Nuevo Comunicado</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-row">
+                <div style="background-color: #1D766F; border-right: solid white; border-bottom: solid white; border-left: solid white;" ng-click="userInbox('adminUser')">
+                    <div>
+                        <div><i class="ion-email-unread icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">{{messageText}}</div>
+                    </div>
+                </div>
+                <div style="background-color: #FF7F00; border-bottom: solid white; border-right: solid white;" ng-click="messageHistory()">
+                    <div>
+                        <div><i class="ion-ios-bookmarks icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Historial Comunicados</div>
+                    </div>
+                </div>
+                <div style="background-color: #E54947; border-bottom: solid white; border-right: solid white;" ng-click="test()">
+                    <div>
+                        <div><i class="ion-ios-bookmarks icon-menu"></i></div>
+                        <br>
+                        <div class="font50w">Test</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

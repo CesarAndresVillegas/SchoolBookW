@@ -1,0 +1,67 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div class="row control-center80" style="text-align: left;">
+                <label class="col item item-input input-border-bottom">
+                    <input type="text" class="placeholder-input24 font24w control-center80" placeholder="Asunto..." ng-model="message.subjet">
+                </label>
+                <label class="col col-center item item-input input-border-bottom font24w">
+                    Categoría:
+                    <select style="margin-left: auto;" class="transparent-input font24w input-no-border background-transparent" ng-model="message.category" ng-options="option.name for option in messagesTypeList track by option.id">
+                    </select>
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col col-center item item-input input-border-bottom font24w" style="display: flex;">
+                    Usuarios:
+                    <select style="margin-left: auto;" class="transparent-input font24w input-no-border background-transparent" ng-model="message.users" ng-options="option.name for option in userList track by option.id">
+                    </select>
+                </label>
+                <a class="button button-icon icon ion-plus-round" ng-click="addSingleUser()"></a>
+                <label class="col col-center item item-input input-border-bottom font24w" style="display: flex;">
+                    Grupos:
+                    <select style="margin-left: auto;" class="transparent-input font24w input-no-border background-transparent" ng-model="message.groups" ng-options="option.name for option in groupList track by option.id">
+                    </select>
+                </label>
+                <a class="button button-icon icon ion-plus-round" ng-click="addGroupUser()"></a>
+            </div>
+            <div class="row control-center80">
+                <label style="display: flex; padding: 0" class="col fileUpload item item-input input-border-bottom font24w">Cargar adjunto...
+                    <input id="uploadBtn" type="file" class="upload" />
+                    <input class="input-no-border font24w" id="uploadFile" disabled="disabled" ng-model="message.attach"/>
+                </label>
+            </div>
+            <div class="row control-center80">
+                <label class="col col-center item item-input input-border-bottom font24w">
+                    Adjuntar repositorio:
+                    <select style="margin-left: auto;" class="transparent-input font24w input-no-border background-transparent" ng-model="message.repository" ng-options="option.name for option in repositoryList track by option.id">
+                    </select>
+                </label>
+            </div>
+            <div class="row item control-center80" style="margin-top: 5px;">
+                <div class="col col-90 font18r textAlign-l">Usuarios</div>
+                <div class="col col-10 "></div>
+            </div>
+            <ion-scroll direction="y " style="height: 50px !important;" class="control-center80">
+                <div class="row item " ng-repeat="r in sendList" ng-click="gridUserClick($index)" ng-class="{'row-selected':$index == idUserCurrentIndex}">
+                    <div class="col col-90 col-center font14b textAlign-l ">{{r.name}}</div>
+                    <div class="col col-10 col-center ">
+                        <button style="color: red !important; " class="button button-small button-icon icon ion-backspace " ng-click="delete($index) "></button>
+                    </div>
+                </div>
+            </ion-scroll>
+            <div style="margin-top: 10px;">
+                <textarea class="textBox-custom control-center80 placeholder-input24 font24w" rows="12" cols="40" placeholder="Escriba su mensaje..." ng-model="message.text"></textarea>
+            </div>
+            <button class="button button-small button-block ion-forward icon-right control-center80 button-blue icon-yellow button-small" ng-click="createMessages()">
+                <a class="font20w">Enviar</a>
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

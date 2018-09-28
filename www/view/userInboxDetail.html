@@ -1,0 +1,41 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <div style="text-align: left;" class="row control-center80">
+                <label style="margin-top: 0 !important; margin-bottom: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important;" class="col item input-no-border">
+                    <a style="margin-right: 10px; margin-left: 10px;" class="font24r">Asunto:</a>
+                    <a class="font20w">{{subjetMessage}}</a>
+                </label>
+                <label style="margin-top: 0 !important; margin-bottom: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important;" class="col item input-no-border">
+                    <a style="margin-right: 10px; margin-left: 10px;" class="font24r">Remitente:</a>
+                    <a class="font20w">{{senderMessage}}</a>
+                </label>
+            </div>
+            <div style="margin-bottom: 5px; text-align: left;" class="row control-center80" ng-show="divFlag">
+                <label class="col col-25 item input-no-border">
+                    <a style="margin-right: 10px; margin-left: 10px;" class="font24r">Adjunto:</a>
+                    <button class="button button-clear button-positive" ng-click="goRepository()" ng-show="repositoryFlag">
+                        <a style="font-size: 20px; color: #0080FF; text-decoration: underline; font-weight: bold; text-shadow: 2px 2px 2px #000;">Repositorio</a>
+                    </button>
+                </label>
+                <label class="col col-25 item input-no-border">
+                    <button class="button button-clear button-positive" ng-click="goAttach()" ng-show="attachFlag">
+                        <a style="font-size: 20px; color: #0080FF; text-decoration: underline; font-weight: bold; text-shadow: 2px 2px 2px #000;">Adjunto</a>
+                    </button>
+                </label>
+            </div>
+            <div>
+                <textarea readonly="1" class="textBox-custom control-center80" rows="23" cols="40">{{textMessage}}</textarea>
+            </div>
+            <button class="button button-small button-block ion-share icon-right control-center80 button-blue icon-yellow button-small" ng-click="messageResponse()">
+                <a class="font20w">Responder</a>
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

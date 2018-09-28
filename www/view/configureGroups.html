@@ -1,0 +1,57 @@
+<ion-view view-title="SchoolBook" align-title="left" cache-view="false" ng-init="init()">
+    <ion-header-bar style="background: #096D8F">
+        <button class="button button-icon icon ion-chevron-left icon-yellow" ng-click="back()"></button>
+    </ion-header-bar>
+    <ion-content class="padding" style="background: url(img/background1.png) center; background-size: cover;">
+        <div class="list">
+            <div class="control-center40">
+                <a class="font-title-white1">SchooL</a><a class="font-title-red1">BooK</a>
+            </div>
+            <label class="item item-input input-border-bottom font24w control-center80">Grupo:
+                <input class="font24w" type="text" spellcheck="false" ng-model="group.group">
+            </label>
+            <div class="row control-center80">
+                <div class="col col-90">
+                    <div class="row item control-center98">
+                        <div class="col font14r textAlign-l">Nombre del grupo</div>
+                    </div>
+                    <ion-scroll direction="y" style="height: 150px;" class="control-center98">
+                        <div class="row item" ng-repeat="r in groupList" ng-click="gridGroupClick($index)" ng-class="{'row-selected':$index == idGroupCurrentIndex}">
+                            <div class="col col-center font14b textAlign-l">{{r.name}}</div>
+                        </div>
+                    </ion-scroll>
+                </div>
+                <div class="col">
+                    <button class="button button-small button-balanced" ng-click="createGroups()" style="margin-bottom: 2px !important;">Agregar
+                    </button>
+                    <button class="button button-small button-assertive" ng-click="deleteGroups()" style="margin-top: 2px !important;">Eliminar
+                    </button>
+                </div>
+            </div>
+            <br>
+            <label class="item item-input input-border-bottom control-center80">
+                <div class="font24w">Usuario:</div>
+                <select style="margin-left: 40% !important;" class="transparent-input font24w input-no-border background-transparent" ng-model="group.users_id" ng-options="option.name for option in userList track by option.id">
+                </select>
+            </label>
+            <div class="row control-center80">
+                <div class="col col-90">
+                    <div class="row item control-center98">
+                        <div class="col font14r textAlign-l">Usuarios del grupo</div>
+                    </div>
+                    <ion-scroll direction="y" style="height: 150px;" class="control-center98">
+                        <div class="row item" ng-repeat="r in userGroupList" ng-click="gridUserClick($index)" ng-class="{'row-selected':$index == idUserCurrentIndex}">
+                            <div class="col col-center font14b textAlign-l">{{r.name}}</div>
+                        </div>
+                    </ion-scroll>
+                </div>
+                <div class="col">
+                    <button class="button button-small button-balanced" ng-click="createGroups_users()" style="margin-bottom: 2px !important;">Agregar
+                    </button>
+                    <button class="button button-small button-assertive" ng-click="deleteGroups_users()" style="margin-top: 2px !important;">Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
